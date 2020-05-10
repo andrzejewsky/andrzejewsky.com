@@ -1,17 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Patryk Andrzejewski Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Patryk Andrzejewski`,
+      summary: `I'm a software engineer who is fascinated with new technologies and creating a modern software. Mainly I do #javascript #react and #vue but... programming is a tool, so i try to force it to solve my problems by adjusting technology to myself, not myself to the technology.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: 'Patryk Andrzejewski blog',
     social: {
-      twitter: `kylemathews`,
+      twitter: { username: 'andrzejewskyy', link: 'https://twitter.com/andrzejewskyy' },
+      linked: { username: 'patryk-andrzejewski',  link: 'https://www.linkedin.com/in/patryk-andrzejewski' },
+      github: { username: 'andrzejewsky',  link: 'https://github.com/andrzejewsky' },
+      devto: { username: 'andrzejewsky',  link: 'https://dev.to/andrzejewsky' },
+      medium: { username: 'patrykandrzejewski',  link: 'https://medium.com/@patrykandrzejewski' },
     },
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -76,8 +80,5 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

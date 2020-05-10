@@ -1,10 +1,33 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Bio from "../components/Bio"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 import { rhythm, scale } from "../utils/typography"
+import styled from "styled-components"
+
+const MainHeading = styled.h1`
+  margin-top: ${rhythm(1)};
+  margin-bottom: 0;
+`
+
+const PostDate = styled.p`
+  ${scale(-1 / 5)}
+  display: block;
+  margin-bottom: ${rhythm(1)};
+`
+
+const BottomLine = styled.hr`
+  margin-bottom: ${rhythm(1)}
+`
+
+const NavList = styled.ul`
+  display: flex;
+  flexWrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -13,51 +36,24 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
+      <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
         <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
+          <MainHeading>{post.frontmatter.title}</MainHeading>
+          <PostDate>{post.frontmatter.date}</PostDate>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <BottomLine />
         <footer>
           <Bio />
         </footer>
       </article>
 
       <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <NavList>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -72,7 +68,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               </Link>
             )}
           </li>
-        </ul>
+        </NavList>
       </nav>
     </Layout>
   )
