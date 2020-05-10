@@ -5,6 +5,7 @@ module.exports = {
       name: `Patryk Andrzejewski`,
       summary: `I'm a software engineer who is fascinated with new technologies and creating a modern software. Mainly I do #javascript #react and #vue but... programming is a tool, so i try to force it to solve my problems by adjusting technology to myself, not myself to the technology.`,
     },
+    siteUrl: `https://andrzejewsky.com`,
     description: 'Patryk Andrzejewski blog',
     social: {
       twitter: { username: 'andrzejewskyy', link: 'https://twitter.com/andrzejewskyy' },
