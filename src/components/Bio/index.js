@@ -40,10 +40,9 @@ const SocialLink = styled.a`
 
 const Bio = () => {
   const { author, social, avatar, socialImages } = useBioData()
-  console.log(social);
 
   const socialIcons = Object.keys(socialImages).map(key => (
-    <SocialLink href={social[key].link} target="_blank" alt={social[key].username}>
+    <SocialLink href={social[key].link} target="_blank" alt={social[key].username} key={key}>
       <SocialIcon fixed={socialImages[key]} />
     </SocialLink>
   ))
